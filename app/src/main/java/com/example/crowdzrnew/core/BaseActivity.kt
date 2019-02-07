@@ -7,13 +7,20 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
+import com.example.crowdzrnew.R
+import com.example.crowdzrnew.core.event.ConnectionReceiver
+import com.example.crowdzrnew.core.ui.FullScreenType
+import com.example.crowdzrnew.core.ui.FullScreenUi
+import com.example.crowdzrnew.feature.status.FullScreenStatusUiActivity
+import com.example.crowdzrnew.widgets.CustomProgressBar
 import com.github.ajalt.timberkt.Timber
 
 /**
  * Created by Addam on 7/1/2019.
  */
-open class BaseActivity: AppCompatActivity() {
-
+open class BaseActivity: AppCompatActivity() , ConnectionReceiver.ConnectionReceiverListener{
+    private var progressBarDialog: CustomProgressBar? = null
+    private val connectionReceiver = ConnectionReceiver()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,8 +35,8 @@ open class BaseActivity: AppCompatActivity() {
     }
 
     private fun setupListeners() {
-//        applicationContext.registerReceiver(connectionReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
-//        connectionReceiver.setListener(this)
+        applicationContext.registerReceiver(connectionReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        connectionReceiver.setListener(this)
     }
 
     override fun onBackPressed() {
@@ -94,19 +101,28 @@ open class BaseActivity: AppCompatActivity() {
         }
     }
 
-//    protected fun showLoading(isShown: Boolean?, string: Any = R.string.progress_bar_message) {
-//        if (!isFinishing) {
-//            if (isShown!!) {
-//                if (progressBarDialog == null) {
-//                    createProgressBar(string)
-//                }
-//                progressBarDialog?.show()
-//            } else {
-//                if (progressBarDialog == null) {
-//                    createProgressBar(string)
-//                }
-//                progressBarDialog?.dismiss()
-//            }
-//        }
-//    }
+    protected fun showLoading(isShown: Boolean?, string: Any = R.string.progress_bar_message) {
+        if (!isFinishing) {
+            if (isShown!!) {
+                if (progressBarDialog == null) {
+                    createProgressBar(string)
+                }
+                progressBarDialog?.show()
+            } else {
+                if (progressBarDialog == null) {
+                    createProgressBar(string)
+                }
+                progressBarDialog?.dismiss()
+            }
+        }
+    }
+    private fun createProgressBar(string: Any) {
+        progressBarDialog = CustomProgressBar.show(this, if (string is Int) getString(string) else string as String, false)
+    }
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+        if (!isConnected) {
+            val fullScreenUI = FullScreenUi(FullScreenType.NOCONNECTION)
+            startActivity(this@BaseActivity, FullScreenStatusUiActivity::class.java, hashMapOf(Pair(Router.Parameter.FULL_SCREEN_UI, fullScreenUI)), singleTask = true)
+        }
+    }
 }

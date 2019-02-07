@@ -2,6 +2,8 @@ package com.example.crowdzrnew.di
 
 import com.example.crowdzrnew.feature.login.LoginActivity
 import com.example.crowdzrnew.feature.login.LoginActivityModule
+import com.example.crowdzrnew.feature.status.FullScreenStatusUiActivity
+import com.example.crowdzrnew.feature.status.FullScreenStatusUiActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -9,4 +11,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [(LoginActivityModule::class)])
     abstract fun bindLoginActivity():LoginActivity
+
+    @ContributesAndroidInjector(modules = [(FullScreenStatusUiActivityModule::class)])
+    abstract fun bindFullScreenStatusActivity(): FullScreenStatusUiActivity
 }

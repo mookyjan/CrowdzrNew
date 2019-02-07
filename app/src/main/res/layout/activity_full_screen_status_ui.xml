@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.example.crowdzrnew.feature.status.FullScreenStatusViewModel" />
+
+
+        <variable
+                name="fullScreenUi"
+                type="com.example.crowdzrnew.core.ui.FullScreenUi" />
+
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llStatus_ui"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+
+        <ImageView
+                android:id="@+id/user_profile_photo"
+                android:layout_width="@dimen/full_screen_profile_width"
+                android:layout_height="@dimen/full_screen_profile_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_medium_16dp"
+                android:elevation="@dimen/space_tiny_4dp"
+                app:srcCompat="@{fullScreenUi.image}" />
+
+        <TextView
+                android:id="@+id/tv_status_title"
+                style="@style/BaseTextView.RalewayBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/space_large_24dp"
+                android:text="@{fullScreenUi.getTitle()}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/large_text_20sp"
+                tools:text="Status Title" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_sub_title"
+                    style="@style/BaseTextView.OpenSansRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/space_medium_16dp"
+                    android:layout_marginBottom="@dimen/space_medium_16dp"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/space_medium_20dp"
+                    android:paddingRight="@dimen/space_medium_20dp"
+                    android:text="@{fullScreenUi.getSubTitle()}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium_text_16sp"
+                    android:textStyle="bold"
+
+                    tools:text="Sub Title" />
+        </LinearLayout>
+
+
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_large_24dp">
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_huge_48dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/space_medium_20dp"
+                    android:background="@drawable/generic_shape_rect"
+                    android:fontFamily="@font/raleway_bold"
+                    android:onClick="@{()->viewModel.onButtonClick()}"
+                    android:text="@{fullScreenUi.getButtonText()}"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/medium_text_16sp"
+                    tools:text="Button"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

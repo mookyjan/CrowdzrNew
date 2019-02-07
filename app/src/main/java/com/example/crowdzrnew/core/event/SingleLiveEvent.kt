@@ -1,4 +1,4 @@
-package addam.com.my.skeletonApp.core.event
+package com.example.crowdzrnew.core.event
 
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.MutableLiveData

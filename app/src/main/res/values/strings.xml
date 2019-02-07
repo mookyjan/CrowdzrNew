@@ -7,7 +7,21 @@
     <string name="error_no_connection">Offline. Please enable your Internet connection</string>
     <string name="error_invalid_username_password">Your mobile number and password do not match</string>
     <string name="error_password_not_match">Password does not match</string>
-    <string name="login_not_match">Invalid mobile number or password</string>
+    <string name="login_not_match">Invalid user name or password</string>
+    <string name="no_connection">Whoops, no connections!</string>
+    <string name="server_err">Whoops,server error!</string>
+    <string name="title_ok">OK</string>
+    <string name="title_try_again">Try Again</string>
+    <string name="create_account_success">You\'re all set!</string>
+    <string name="title_dashboard">Go to Dashboard</string>
+
+    <string name="no_conn_subtitle">Please check your internet connection and try again.</string>
+    <string name="server_error_subtitle">Sorry, something went wrong on our end. Please try again later.</string>
+    <string name="create_account_success_subtitle">You have successfully created your account.</string>
+
+    <string name="empty"/>
+    <string name="progress_bar_message">Loading…</string>
+
     <string name="keyboard_address" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&amp;()-,./@#:</string>
     <string name="keyboard_city" translatable="false">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="keyboard_car_reg_no" translatable="false">
@@ -54,11 +68,164 @@
     <!--Menu-->
 
     <string name="menu_transactions">Transactions</string>
-    <string name="menu_help">Help &amp; Support</string>
+    <!--<string name="menu_help">Help &amp; Support</string>-->
     <string name="menu_about">About Us</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_setting">Settings</string>
     <string name="menu_promotion">Promotion</string>
     <string name="username">Username</string>
     <string name="testLogin">Test Login</string>
+
+
+    <string name="txt_sign_in_title">SIGN IN</string>
+    <string name="txt_sign_up">SIGN UP</string>
+    <string name="txt_first_name">First Name</string>
+    <string name="txt_last_name">Last Name</string>
+    <string name="txt_user_name_hint">User Name</string>
+    <string name="txt_hint_email">Email</string>
+    <string name="txt_hint_password">Password</string>
+    <string name="txt_repeat_password">Repeat Password</string>
+    <string name="txt_forgot_password">FORGOT PASSWORD?</string>
+    <string name="txt_sign_in_with">SIGN IN WITH</string>
+    <string name="txt_sign_up_with">SIGN UP WITH</string>
+    <string name="txt_terms_condition">I agree with
+        <u>TERMS &amp; Conditions</u>
+    </string>
+    <string name="txt_no_account">If you don\'t have account</string>
+    <string name="txt_sing_up_here">
+        <a href="http://www.google.com">SIGN UP HERE</a>
+    </string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_request_fragment">Requests</string>
+    <string name="title_stacks_fragment">Stacks</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="txt_user_title">Aliza White</string>
+    <string name="txt_user_email">alozawhite101@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--home activity-->
+    <string name="title_card_feature">Feature</string>
+    <string name="title_card_trending">Trending</string>
+    <string name="title_card_ending_soon">Ending Soon</string>
+    <string name="txt_notification">4 Orders near your Area</string>
+    <string name="txt_item_title">USB 2.0</string>
+    <string name="txt_item_price">$19.00</string>
+    <string name="txt_item_detail">Expiring in 6 days 2 hours 5 mins</string>
+    <string name="txt_item_likes">2000</string>
+    <string name="txt_item_views">3000</string>
+
+    <!--navigation drawer titles-->
+    <string name="menu_home">Home</string>
+    <string name="menu_inbox">Inbox</string>
+    <string name="menu_notification">Notifications</string>
+    <string name="menu_favourite">Favourite</string>
+    <string name="menu_shortcuts">Shortcuts</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_myrequests">My Requests</string>
+    <string name="menu_manage_sales">Manage Sales</string>
+    <string name="menu_my_stacks">My stacks</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_help">Help And Tutorial</string>
+
+    <!--Request Detail Fragment-->
+    <string name="txt_request_detail">Request Detail</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_expiring_in">Expiring in</string>
+    <string name="hint_posted_on">Posted on</string>
+    <string name="hint_price">Price</string>
+    <string name="hint_views">Views</string>
+    <string name="txt_edit">Edit</string>
+    <string name="txt_review_value">4.5</string>
+    <string name="txt_bid">Bids</string>
+    <string name="btn_bid_now">Bid Now</string>
+    <string name="txt_comments">Comments</string>
+    <string name="btn_post_comment">Post Comment</string>
+    <string name="txt_review_detail">I will sell this usb in $10 with brand new edition.</string>
+    <string name="hint_bid_description">Start Typing your bid description here.</string>
+    <string name="txt_bidder">Bidder</string>
+    <string name="btn_place_bid">Place Bid</string>
+
+    <!--user profile detail-->
+    <string name="txt_user_name">Chris Jones</string>
+    <string name="txt_amount">Total Amount Paid to Date</string>
+    <string name="txt_amount_value">$20,000.00</string>
+    <string name="hint_ratings">Ratings</string>
+    <string name="hint_completed_orders">Completed Orders</string>
+    <string name="hint_requests">Requests</string>
+    <string name="hint_stacks">Stacks</string>
+    <string name="hint_order_completion_rates">Order Completion Rate</string>
+    <!--<string name="hint_views">Views</string>-->
+    <string name="hint_location">Location</string>
+    <string name="hint_active_listings">Active Listings</string>
+    <string name="txt_view_all">
+        <a href="http://www.google.com">View all</a>
+    </string>
+
+    <string name="txt_balance">Balance: $200,000</string>
+    <string name="txt_latest_history">Latest History</string>
+    <string name="txt_show_all">Show All</string>
+    <string name="txt_date">14 May 2018 10:00 AM</string>
+    <string name="txt_pending">Pending</string>
+    <string name="txt_clear">Cleared</string>
+
+    <string name="txt_connect_account">Connect Your Account</string>
+    <string name="btn_save">Save</string>
+
+    <string name="card_title_deposit">Deposit</string>
+    <string name="card_title_withdraw">Withdraw</string>
+
+
+    <string name="txt_stack_title">Create Stack</string>
+    <string name="txt_convert_to_request">Convert into Request</string>
+    <string name="btn_submit">Submit</string>
+
+    <string name="txt_chat">Hello ! I need about 8 designs. Working on my membership site and need some that i can work
+        with on regualr bassis for a new look on my site .I dont have a big budget but would like to see one design.
+    </string>
+
+    <string name="txt_inbox_detail">Hello ! I need about 8 designs.I am working ...</string>
+
+
+    <string name="txt_active">Active</string>
+    <string name="txt_completed">Completed</string>
+    <string name="txt_expired">Expired</string>
+    <string name="txt_in_progress">IN Progress</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="txt_education">Education</string>
+    <string name="txt_feed_back">Leave Feedback</string>
+    <string name="txt_forum">Forum</string>
+    <string name="txt_blog">Blog</string>
+    <string name="txt_how">How to?</string>
+
+    <string name="invalid_username">Authentication failed. invalid username</string>
+    <string name="invalid_password">Authentication failed. invalid password</string>
+    <string name="error_email_not_exist">This email does not exist on server</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_password">Error password doesnot match</string>
+    <string name="error_field_required">This field is required</string>
+
+    <!-- Network Error -->
+    <string name="network_fail_message">No internet connection. Make sure that Wi-Fi or cellular mobile data is turned
+        on,
+        then try again.
+    </string>
+    <!-- Retry -->
+    <string name="retry">Retry</string>
+    <!-- Api Errors -->
+    <string name="server_error">An unexpected error has been occurred.</string>
+    <string name="client_error">The requested resource could not be found but may be available in the future.</string>
+    <string name="unauthenticated_error">User is not authenticated.</string>
+    <string name="settings">Settings</string>
+
+    <string name="network_error">Network Error</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>

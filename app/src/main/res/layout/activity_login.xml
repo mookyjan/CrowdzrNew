@@ -11,47 +11,298 @@
 
     </data>
 
+    <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+    <!--android:visibility="gone"-->
+    <!--&gt;-->
+
+        <!--<android.support.constraint.Guideline-->
+                <!--android:id="@+id/left_guideline"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--app:layout_constraintGuide_begin="@dimen/space_large_24dp" />-->
+
+        <!--<android.support.constraint.Guideline-->
+                <!--android:id="@+id/right_guideline"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--app:layout_constraintGuide_end="@dimen/space_large_24dp" />-->
+
+        <!--<com.example.crowdzrnew.widgets.CustomEditText-->
+                <!--android:id="@+id/username"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:layout_constraintLeft_toLeftOf="@+id/left_guideline"-->
+                <!--app:layout_constraintRight_toRightOf="@+id/right_guideline"-->
+                <!--app:layout_constraintTop_toTopOf="parent"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--style="@style/BaseTextView.OpenSansRegular"-->
+                <!--app:has_next_focus="true"-->
+                <!--app:hint_text="@string/username"-->
+                <!--app:header_text="@string/username"-->
+                <!--app:keyboard_layout="login_username"/>-->
+        <!--<Button-->
+                <!--android:id="@+id/login"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:layout_constraintLeft_toLeftOf="@+id/left_guideline"-->
+                <!--app:layout_constraintRight_toRightOf="@+id/right_guideline"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/username"-->
+                <!--style="@style/ConfirmButton"-->
+                <!--android:text="@string/login"-->
+                <!--android:onClick="@{()-> viewmodel.onLoginClicked()}" app:layout_constraintHorizontal_bias="0.0"/>-->
+
+    <!--</android.support.constraint.ConstraintLayout>-->
+
     <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:id="@+id/login_layout"
+                                                 android:background="@android:color/white"
+                                                 tools:context=".LoginActivity">
 
-        <android.support.constraint.Guideline
-                android:id="@+id/left_guideline"
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/space_large_24dp" />
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:src="@drawable/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.constraint.Guideline
-                android:id="@+id/right_guideline"
-                android:layout_width="wrap_content"
+        <TextView
+                android:id="@+id/txtSignInTitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/space_large_24dp" />
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@string/txt_sign_in_title"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <com.example.crowdzrnew.widgets.CustomEditText
-                android:id="@+id/username"
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/left_guideline"
-                app:layout_constraintRight_toRightOf="@+id/right_guideline"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_left"
+                app:layout_constraintTop_toBottomOf="@+id/txtSignInTitle">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"
+                    android:text="@={viewmodel.username}"
+                    android:drawableTint="@android:color/black"
+                    android:hint="@string/txt_hint_email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_left"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+            <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@android:drawable/ic_lock_lock"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:text="@={viewmodel.password}"
+                    android:drawableTint="@android:color/black"
+                    android:hint="@string/txt_hint_password"/>
+        </android.support.design.widget.TextInputLayout>
+<!--userPa$$w0rd-->
+        <TextView
+                android:id="@+id/txt_password"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/txt_forgot_password"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintHorizontal_bias="0.471"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/txt_sign_in_title"
+                android:textColor="@android:color/white"
+                android:onClick="@{()-> viewmodel.onLoginClicked()}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_left"
+                app:layout_constraintTop_toBottomOf="@+id/txt_password" />
+
+        <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@string/txt_sign_in_with"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_left"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/icon_facebook"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginLeft="112dp"
+                android:layout_marginStart="112dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_facebook"
+                app:layout_constraintEnd_toStartOf="@+id/icon_gmail"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/guideline_vertical_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/icon_gmail"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/google_plus"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/icon_facebook"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="#cec1c1"
+
+                android:gravity="bottom|center"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline_vertical_left">
+
+            <TextView
+                    android:id="@+id/txt_no_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:text="@string/txt_no_account"
+                    android:textColor="@android:color/white" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/txt_no_account"
+                    android:autoLink="all"
+                    android:id="@+id/txt_sign_up_here"
+                    android:gravity="center_vertical"
+                    android:linksClickable="true"
+                    android:text="@string/txt_sing_up_here"
+                    android:textColor="@android:color/white"
+                    android:textColorLink="@color/colorPrimary" />
+        </RelativeLayout>
+
+        <com.wang.avi.AVLoadingIndicatorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/signin_progress_loading"
+                style="@style/AVLoadingIndicatorView"
+                android:visibility="gone"
+                app:indicatorName="LineSpinFadeLoaderIndicator"
+                app:indicatorColor="@color/progress_bar_indicator_color"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                style="@style/BaseTextView.OpenSansRegular"
-                app:has_next_focus="true"
-                app:hint_text="@string/username"
-                app:header_text="@string/username"
-                app:keyboard_layout="login_username"/>
-        <Button
-                android:id="@+id/login"
-                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:elevation="2dp"
+                android:padding="@dimen/_10sdp"
+                android:background="@color/progress_bar_background_color"
+        />
+
+        <android.support.constraint.Guideline
+                android:id="@+id/guideline_vertical_left"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@+id/left_guideline"
-                app:layout_constraintRight_toRightOf="@+id/right_guideline"
-                app:layout_constraintTop_toBottomOf="@+id/username"
-                style="@style/ConfirmButton"
-                android:text="@string/login"
-                android:onClick="@{()-> viewmodel.onLoginClicked()}" app:layout_constraintHorizontal_bias="0.0"/>
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+        <android.support.constraint.Guideline
+                android:id="@+id/guideline_vertical_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_end="@dimen/_16sdp" />
+
 
     </android.support.constraint.ConstraintLayout>
+
 </layout>

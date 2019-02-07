@@ -5,9 +5,12 @@ import android.arch.persistence.room.Room
 import android.content.Context
 import com.example.crowdzrnew.AppPreference
 import com.example.crowdzrnew.AppResourceProvider
+import com.example.crowdzrnew.BuildConfig
 import com.example.crowdzrnew.core.Router
 import com.example.crowdzrnew.core.util.SchedulerProvider
+import com.example.crowdzrnew.database.CrowdzrDatabase
 import com.example.crowdzrnew.rest.GeneralService
+import com.example.crowdzrnew.rest.api.TokenService
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -57,6 +60,19 @@ class AppModule {
     fun provideGson(): Gson =
         GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .create()
+
+    @Provides
+    @Singleton
+    fun provideDb(application: Application):CrowdzrDatabase{
+        return Room.databaseBuilder(application,CrowdzrDatabase::class.java,"crowdzr")
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserProfile(db:CrowdzrDatabase) =db.userProfileDao()
+
 
 //    @Provides
 //    @Singleton
@@ -124,14 +140,14 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideGeneralService(gson: Gson, @Named("real") okHttpClient: OkHttpClient): GeneralService {
-        val baseUrl = URL
+    fun provideGeneralService(gson: Gson, @Named("real") okHttpClient: OkHttpClient): TokenService {
+        val baseUrl = getUrl(true)
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
-            .build().create(GeneralService::class.java)
+            .build().create(TokenService::class.java)
     }
 
     @Provides
@@ -144,5 +160,9 @@ class AppModule {
     @Singleton
     fun getResourceProvider(context: Context): AppResourceProvider {
         return AppResourceProvider(context)
+    }
+
+    private fun getUrl(isApi: Boolean): String {
+        return if (isApi) BuildConfig.Users_URL else BuildConfig.Base_URL
     }
 }

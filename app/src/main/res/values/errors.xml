@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="InvalidParameterException">Missing required parameter USERNAME</string>
+    <string name="UserNotFoundException">User does not exist..</string>
+    <string name="NotAuthorizedException">Incorrect username or password.</string>
+    <string name="EPx003">Mobile number does not exist.</string>
+    <string name="EPx005">Your current password does not match.</string>
+    <string name="EPx006">The code is invalid</string>
+    <string name="EPx007">Verification code required</string>
+    <string name="EPx011">Your mobile number and password do not match.</string>
+    <string name="EPx012">Error updating profile</string>
+    <string name="cardBiz_1001">Please complete all fields</string>
+    <string name="cardBiz_2001">User profile not found</string>
+    <string name="cardBiz_2002">User already registered</string>
+    <string name="cardBiz_2003">Insufficient wallet balance</string>
+    <string name="cardBiz_2004">Log in invalid, please contact customer service.</string>
+    <string name="cardBiz_2005">Only student account is allowed to update</string>
+    <string name="cardBiz_2006">Date of Birth does not match NRIC/Passport No.</string>
+    <string name="cardBiz_2007">ID is already registered.</string>
+    <string name="cardBiz_2052">This payment has been made before</string>
+    <string name="cardBiz_2053">QR code is expired. Please request merchant to regenerate.</string>
+    <string name="cardBiz_2054">QR code is invalid. Please request merchant to regenerate.</string>
+    <string name="cardBiz_2055">Transaction ID is invalid. Please try again.</string>
+    <string name="cardBiz_2061">Invalid transaction</string>
+    <string name="cardBiz_2062">Payment has been made.</string>
+    <string name="cardBiz_2063">Transaction failed</string>
+    <string name="cardBiz_2064">Transaction cancelled</string>
+    <string name="cardBiz_2070">Transaction rejected due to user exceeded wallet limit</string>
+    <string name="cardBiz_2071">Transaction rejected due to user exceeded transaction limit</string>
+    <string name="cardBiz_2072">Transaction rejected due to user exceeded daily transaction limit</string>
+    <string name="cardBiz_2073">Transaction rejected due to user exceeded monthly transaction limit</string>
+    <string name="cardBiz_2074">Transaction rejected due to user exceeded reload limit</string>
+    <string name="cardBiz_2076">Account locked for reload. Please wait…</string>
+    <string name="invalid_grant">Password does not match.</string>
+    <string name="eProfile_900901">Session expired.</string>
+    <string name="out_of_country">App can only be used within Malaysia.</string>
+</resources>
