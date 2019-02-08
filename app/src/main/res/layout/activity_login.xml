@@ -9,6 +9,7 @@
                 name="viewmodel"
                 type="com.example.crowdzrnew.feature.login.LoginViewModel"/>
 
+        <import type="android.view.View"/>
     </data>
 
     <!--<android.support.constraint.ConstraintLayout-->
@@ -115,13 +116,14 @@
                     android:id="@+id/et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_email"
+                    android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="@dimen/_5sdp"
                     android:inputType="textEmailAddress"
                     android:imeOptions="actionNext"
                     android:text="@={viewmodel.username}"
                     android:drawableTint="@android:color/black"
-                    android:hint="@string/txt_hint_email"/>
+                    android:hint="@string/txt_hint_email"
+            />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -180,6 +182,7 @@
                 android:background="@drawable/rounded_button"
                 android:text="@string/txt_sign_in_title"
                 android:textColor="@android:color/white"
+                android:enabled="@{safeUnbox(viewmodel.isFormValid)}"
                 android:onClick="@{()-> viewmodel.onLoginClicked()}"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_vertical_left"
