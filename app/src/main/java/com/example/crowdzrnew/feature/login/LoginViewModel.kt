@@ -19,16 +19,13 @@ import com.example.crowdzrnew.core.util.SchedulerProvider
 import com.example.crowdzrnew.database.DatabaseRepository
 import com.example.crowdzrnew.database.User
 import com.example.crowdzrnew.database.UserProfile
-import com.example.crowdzrnew.rest.GeneralRepository
 import com.example.crowdzrnew.rest.model.LoginResponse
-import com.example.crowdzrnew.rest.model.SampleLoginResponse
 import com.example.crowdzrnew.rest.repositoroy.TokenRepository
 import com.example.crowdzrnew.utilities.ErrorCodeValidator
 import com.example.crowdzrnew.utilities.ObservableString
 import com.example.crowdzrnew.utilities.Validator
 import com.example.crowdzrnew.utilities.observe
 import com.github.ajalt.timberkt.Timber
-import com.github.ajalt.timberkt.i
 import com.google.gson.JsonObject
 import io.reactivex.Completable
 import io.reactivex.CompletableObserver
@@ -40,7 +37,6 @@ import io.reactivex.functions.BiFunction
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_login.view.*
 import retrofit2.HttpException
 
 class LoginViewModel(private val schedulerProvider: SchedulerProvider,
@@ -49,8 +45,8 @@ class LoginViewModel(private val schedulerProvider: SchedulerProvider,
                      private val appResourceProvider: AppResourceProvider,
                      private val appPreference: AppPreference):ViewModel() {
 
-    var username =ObservableString("")
-    var password = ObservableString("")
+    var username = ObservableString("user2@gmail.com")
+    var password = ObservableString("userPa\$\$w0rd")
     var isFormValid = ObservableBoolean(false)
     lateinit var userInfo :User
     val loading = MutableLiveData<Boolean>()

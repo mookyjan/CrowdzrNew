@@ -11,4 +11,5 @@ class DatabaseRepository @Inject constructor(private val userProfileDao: UserPro
 
     fun insertUserProfile(userProfile: UserProfile) = userProfileDao.insert(userProfile)
 
+    fun getUserEmail(email: String): Single<UserProfile> = userProfileDao.getUserEmail(email)
 }

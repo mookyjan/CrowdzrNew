@@ -10,6 +10,11 @@ object Constants {
         System.loadLibrary("keys")
     }
 
+    public const val BASE_URL = "http://6hwbqkua26.execute-api.us-east-1.amazonaws.com/stg"
+    public const val BASE_USERS_URL = "http://qb43jq4970.execute-api.us-east-1.amazonaws.com/stg/users"
+    public const val BASE_REQUESTS_URL = "http://qb43jq4970.execute-api.us-east-1.amazonaws.com/stg/requests"
+    public const val BASE_TRANSACTIONS_URL = "http://qb43jq4970.execute-api.us-east-1.amazonaws.com/stg/transactions"
+
     private external fun getClientKey(): String
     private external fun getClientSecret(): String
     external fun getPromotionToken(): String

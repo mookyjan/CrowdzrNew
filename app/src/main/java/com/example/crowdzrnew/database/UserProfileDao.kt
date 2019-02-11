@@ -22,4 +22,7 @@ interface UserProfileDao {
 
     @Query("UPDATE userProfile SET displayName = :nickname, fName = :fName WHERE email = :email")
     fun updateUserProfile(nickname: String, email: String, fName: String)
+
+    @Query("SELECT * FROM userprofile WHERE email = :email LIMIT 1")
+    fun getUserEmail(email: String): Single<UserProfile>
 }
